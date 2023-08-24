@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+
+.banner{
+    display: block;
+    margin: 0px;
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+}
+
+.bannertext{
+    padding: 15px 0px;
+    top: 25%;
+    text-align: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Chakra Petch', sans-serif;
+    z-index: 2;
+}

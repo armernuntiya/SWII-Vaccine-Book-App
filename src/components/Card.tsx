@@ -1,20 +1,17 @@
-import styles from './card.module.css'
 import Image from 'next/image'
 
-export default function Card(){
+export default function Card({hospitalName, hospitalimg}:{hospitalName:string; hospitalimg:string}){
     return(
-        <div className={styles.card}>
-            <div className={styles.cardimg}>
-                <Image src='/img/syringe.avif'
-                alt='syringe'
+        <div className="w-1/6 h-[350px] rounded-lg shadow-lg bg-cyan-50 border border-sky-200">
+            <div className="w-full h-[50%] relative mt-[10%] border-4 border-x-0 border-sky-200">
+                <Image src={hospitalimg}
+                alt='hospital image'
                 fill={true}
+                className='object-cover'
                 />
             </div>
-            <div className={styles.cardtext}>
-                <div style={{fontWeight:"bolder", fontSize:"18px", fontFamily:"\'Prompt\', sans-serif"}}>วัคซีน (Vaccine)</div>
-                <div style={{fontFamily:"\'Prompt\', sans-serif"}}>สารชนิดหนึ่งที่ฉีดเข้าไปร่างกาย เพื่อสร้างภูมิคุ้มกันโรคต่างๆ ส่วนใหญ่ทำมาจากเชื้อโรค แบ่งเป็น 2 ประเภท คือ 
-                ทำจากเชื้อโรคที่ตายแล้วมีสารของเชื้อโรคมาฉีดเข้าตัวเรา และ ทำจากเชื้อโรคที่อ่อนแอ 
-                ทำให้มันสลบพิษจะได้ไม่รุนแรง เมื่อฉีดเข้าไปในร่างกายคนเรา ร่างกายเราก็จะสร้างภูมิคุ้มกัน กับโรคนั้นๆ</div>
+            <div className="text-center text-2xl font-semibold font-sans mt-[15%] ml-[5%] mr-[5%]">
+                {hospitalName}
             </div>        
         </div>
     );

@@ -1,6 +1,7 @@
 'use client'
 
 import {useState} from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './banner.module.css'
 import Image from 'next/image'
 
@@ -9,6 +10,7 @@ export default function Banner(){
     const covers = ['/img/cover1.jpg','/img/cover2.jpg','/img/cover3.jpg','/img/cover4.jpg']
 
     const [index,setIndex] = useState(0);
+    const rounter = useRouter();
 
     return(
         <div className={styles.banner} onClick={()=>( setIndex((index+1)%4))}>
@@ -19,8 +21,15 @@ export default function Banner(){
             <div className={styles.bannertext}>
                 <div style={{marginBottom:"5px", fontSize:"2.5vw"}}>รับวัคซีนเพื่อสุขภาพ</div>
                 <div style={{fontSize:"1.25vw"}}>ลงทะเบียนและร่วมปกป้องสังคม</div>
-                
             </div>
+            
+            <button className='bg-green-200 border border-green-600 font-semibold 
+                                py-2 px-4 m-2 rounded z-3 absolute bottom-0 right-0
+                                hover:bg-green-100 hover:text-green-600 hover:border-tranparent'
+                    onClick={(e)=>{e.stopPropagation();rounter.push('/hospital');}}
+                    >
+                Select Hospital
+            </button>
         </div>
     );
 }

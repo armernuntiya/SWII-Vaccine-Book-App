@@ -3,16 +3,10 @@
 import InteractiveCard from './InteractiveCard';
 import Image from 'next/image'
 import { Rating } from '@mui/material';
-// import { useState } from 'react';
 
 
 
 export default function Card({hospitalName, hospitalimg, rate, onCompare}:{hospitalName:string; hospitalimg:string; rate:number|null; onCompare:Function}){
-
-
-
-// const [rate, setRate] = useState<number | null>(null);
-
 
     return(
         <InteractiveCard>
@@ -26,15 +20,14 @@ export default function Card({hospitalName, hospitalimg, rate, onCompare}:{hospi
             <div className="text-center text-2xl font-semibold font-sans mt-[10%] ml-[5%] mr-[5%] h-[15%]">
                 {hospitalName}
             </div>        
-            <div className='pl-[2em] py-[5%]'>
+            <div className='py-[5%]'>
             <Rating
                 name="simple-controlled"
                 value={rate}
                 onChange={(event, newRate) => {
-                    // setRate(newRate);
                     onCompare(newRate,hospitalName);
-                }
-            }   
+                }}
+                onClick={((event)=>event.stopPropagation())}
                 size="large"
             />
             </div>

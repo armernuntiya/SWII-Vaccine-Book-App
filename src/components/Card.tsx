@@ -6,7 +6,7 @@ import { Rating } from '@mui/material';
 
 
 
-export default function Card({hospitalName, hospitalimg, rate, onCompare}:{hospitalName:string; hospitalimg:string; rate:number|null; onCompare:Function}){
+export default function Card({hospitalName, hospitalimg, rate, onCompare}:{hospitalName:string; hospitalimg:string; rate?:number|null; onCompare?:Function}){
 
     return(
         <InteractiveCard>
@@ -19,7 +19,7 @@ export default function Card({hospitalName, hospitalimg, rate, onCompare}:{hospi
             </div>
             <div className="text-center text-2xl font-semibold font-sans mt-[10%] ml-[5%] mr-[5%] h-[15%]">
                 {hospitalName}
-            </div>        
+            </div> { onCompare&&rate?       
             <div className='py-[5%]'>
             <Rating
                 name="simple-controlled"
@@ -30,7 +30,7 @@ export default function Card({hospitalName, hospitalimg, rate, onCompare}:{hospi
                 onClick={((event)=>event.stopPropagation())}
                 size="large"
             />
-            </div>
+            </div>:<></>}
         </InteractiveCard>
     );
 }

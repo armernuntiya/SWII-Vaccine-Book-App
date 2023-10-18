@@ -19,7 +19,7 @@ export default async function HospitalDetailPage({params}: {params: {hid:string}
                     alt='Hospital Image'
                     width={0} height={0} sizes="100vw"
                     className="rounded-lg w-[30%] border-2 border-black"/>
-                <div className="flex flex-col mx-8 my-4 relative">
+                <div className="flex flex-col mx-8 my-4 relative w-[70%]">
                     <div className="text-3xl font-medium">{hospitalDetail.data.name}</div>
                     <div className="text-xl absolute bottom-0 left-0">
                         <div>Address : {hospitalDetail.data.address}</div>

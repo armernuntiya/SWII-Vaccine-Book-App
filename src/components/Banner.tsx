@@ -4,6 +4,7 @@ import {useState} from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './banner.module.css'
 import Image from 'next/image'
+import { useSession } from 'next-auth/react';
 
 export default function Banner(){
 
@@ -11,6 +12,9 @@ export default function Banner(){
 
     const [index,setIndex] = useState(0);
     const rounter = useRouter();
+
+    const { data:session } = useSession();
+
 
     return(
         <div className={styles.banner} onClick={()=>( setIndex((index+1)%4))}>
@@ -23,6 +27,9 @@ export default function Banner(){
                 <div style={{fontSize:"1.25vw"}}>ลงทะเบียนและร่วมปกป้องสังคม</div>
             </div>
             
+            {session? <div className='z-30 absolute right-10 top-10 font-semibold text-xl text-rose-500'>
+                {session.user.name}</div>:null}
+
             <button className='bg-green-200 border border-green-600 font-semibold 
                                 py-2 px-4 m-2 rounded z-3 absolute bottom-0 right-0
                                 hover:bg-green-100 hover:text-green-600 hover:border-tranparent'
@@ -30,6 +37,7 @@ export default function Banner(){
                     >
                 Select Hospital
             </button>
+
         </div>
     );
 }

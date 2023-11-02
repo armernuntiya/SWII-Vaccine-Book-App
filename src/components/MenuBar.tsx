@@ -17,6 +17,7 @@ export default async function TopMenu() {
                 : <Link href="/api/auth/signin">
                     <div className="flex items-center h-full px-8 font-medium text-lg font-mono">
                     Sign-In</div></Link>}
+                <MenuItem title="My Booking" pageRef="./mybooking"/>    
                 <div className="mx-[auto]"></div>
                 <MenuItem title="Booking" pageRef="./booking"/>
                 <div className="h-full w-14 relative">

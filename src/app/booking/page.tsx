@@ -3,6 +3,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import getUserProfile from "@/libs/getUserProfile";
 
+
+
 export default async function Booking() {
 
   const session = await getServerSession(authOptions)
@@ -11,6 +13,8 @@ export default async function Booking() {
 
   const profile = await getUserProfile(session.user.token)
   var createdAt = new Date(profile.data.createdAt)
+
+
 
     return (
       <main className="m-5 flex flex-col items-center space-y-5 text-l">

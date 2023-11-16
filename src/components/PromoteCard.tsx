@@ -20,7 +20,7 @@ export default function PromoteCard(){
                 <div className="text-2xl font-semibold font-sans">
                     Get your vaccine today.
                 </div>
-                <button className="block rounded-full bg-rose-600 text-xl
+                <button id="videobtn" className="block rounded-full bg-rose-600 text-xl
                                     hover:bg-pink-400 px-12 py-2 
                                     shadow-sm text-white absolute bottom-0" 
                         onClick={()=>{setPlaying(!playing)}}>

@@ -30,7 +30,7 @@ export default function Banner(){
             {session? <div className='z-30 absolute right-10 top-10 font-semibold text-xl text-rose-500'>
                 {session.user.name}</div>:null}
 
-            <button className='bg-green-200 border border-green-600 font-semibold 
+            <button id='linktohospital' className='bg-green-200 border border-green-600 font-semibold 
                                 py-2 px-4 m-2 rounded z-3 absolute bottom-0 right-0
                                 hover:bg-green-100 hover:text-green-600 hover:border-tranparent'
                     onClick={(e)=>{e.stopPropagation();rounter.push('/hospital');}}

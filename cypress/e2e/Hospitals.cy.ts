@@ -1,6 +1,5 @@
 describe('Hospitals', () => {
-  it('Should fetch cars and display',() => {
-    cy.visit('/')
+  it('Should have and action video and have link into pageHospital that have image least 3',() => {
 
     cy.get('video').should('exist')
     
